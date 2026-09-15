@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard de Cotações</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <h1>Dashboard de Cotações Logísticas</h1>
+    <p class="app-subtitle">Cotações internacionais consolidadas — visão de vendedores, status e lanes</p>
+  </header>
+
+  <main class="app-main">
+    <section class="filter-row" aria-label="Filtros">
+      <div class="filter-field">
+        <label for="filtro-lane">Lane</label>
+        <select id="filtro-lane">
+          <option value="">Todas</option>
+        </select>
+      </div>
+      <div class="filter-field">
+        <label for="filtro-vendedor">Vendedor</label>
+        <select id="filtro-vendedor">
+          <option value="">Todos</option>
+        </select>
+      </div>
+      <div class="filter-field">
+        <label for="filtro-data-inicio">Data inicial</label>
+        <input type="date" id="filtro-data-inicio" />
+      </div>
+      <div class="filter-field">
+        <label for="filtro-data-fim">Data final</label>
+        <input type="date" id="filtro-data-fim" />
+      </div>
+      <div class="filter-actions">
+        <button id="btn-aplicar" class="btn btn-primary">Aplicar</button>
+        <button id="btn-limpar" class="btn btn-ghost">Limpar</button>
+      </div>
+    </section>
+
+    <section class="stat-row">
+      <div class="stat-tile">
+        <span class="stat-tile-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 17V9m6 8V5M3 21h18M6 21V13" />
+          </svg>
+        </span>
+        <span class="stat-label">Total de cotações registradas</span>
+        <span class="stat-value" id="stat-total">—</span>
+      </div>
+    </section>
+
+    <section class="chart-grid">
+      <div class="chart-card">
+        <div class="chart-card-header">
+          <h2>Top 10 vendedores por cotações aprovadas</h2>
+        </div>
+        <div class="chart-canvas-wrap chart-canvas-wrap--tall">
+          <canvas id="chart-top-vendedores"></canvas>
+          <p class="chart-empty" id="empty-top-vendedores" hidden>Sem cotações aprovadas para os filtros selecionados.</p>
+        </div>
+      </div>
+
+      <div class="chart-card">
+        <div class="chart-card-header">
+          <h2>Volume de cotações por mês</h2>
+          <div class="toggle-group" role="group" aria-label="Status do volume mensal">
+            <button class="toggle-btn is-active" data-status="aprovadas">Aprovadas</button>
+            <button class="toggle-btn" data-status="reprovadas">Reprovadas</button>
+            <button class="toggle-btn" data-status="estudo">Estudo</button>
+          </div>
+        </div>
+        <div class="chart-canvas-wrap">
+          <canvas id="chart-volume-mensal"></canvas>
+          <p class="chart-empty" id="empty-volume-mensal" hidden>Sem cotações para este status no período selecionado.</p>
+        </div>
+      </div>
+
+      <div class="chart-card">
+        <div class="chart-card-header">
+          <h2>Distribuição de status</h2>
+        </div>
+        <div class="chart-canvas-wrap">
+          <canvas id="chart-status"></canvas>
+          <p class="chart-empty" id="empty-status" hidden>Sem cotações para os filtros selecionados.</p>
+        </div>
+        <ul class="donut-legend" id="status-legend"></ul>
+      </div>
+
+      <div class="chart-card">
+        <div class="chart-card-header">
+          <h2>Volume de cotações por lane</h2>
+        </div>
+        <div class="chart-canvas-wrap">
+          <canvas id="chart-lane"></canvas>
+          <p class="chart-empty" id="empty-lane" hidden>Sem cotações para os filtros selecionados.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="chart-card">
+      <div class="chart-card-header">
+        <h2>Projeção de demanda — próximos meses</h2>
+        <ul class="forecast-legend" aria-hidden="true">
+          <li><span class="legend-swatch legend-swatch--real"></span>Real</li>
+          <li><span class="legend-swatch legend-swatch--projecao"></span>Projeção</li>
+        </ul>
+      </div>
+      <div class="chart-canvas-wrap">
+        <canvas id="chart-forecast"></canvas>
+        <p class="chart-empty" id="empty-forecast" hidden>Histórico insuficiente para gerar uma projeção (mínimo de 3 dias com cotações registradas).</p>
+      </div>
+      <p class="chart-caption" id="forecast-caption"></p>
+    </section>
+
+    <section class="table-card">
+      <div class="chart-card-header">
+        <h2>Cotações detalhadas</h2>
+        <span class="table-summary" id="table-summary"></span>
+      </div>
+      <div class="table-scroll">
+        <table id="tabela-cotacoes">
+          <thead>
+            <tr>
+              <th>Código</th>
+              <th>Cliente</th>
+              <th>Data de criação</th>
+              <th>Status</th>
+              <th>Modal</th>
+              <th>País origem</th>
+              <th>País destino</th>
+              <th>Vendedor</th>
+              <th>Lane</th>
+            </tr>
+          </thead>
+          <tbody id="tabela-cotacoes-body"></tbody>
+        </table>
+      </div>
+      <div class="pagination">
+        <button id="btn-prev" class="btn btn-ghost">Anterior</button>
+        <span id="pagination-info"></span>
+        <button id="btn-next" class="btn btn-ghost">Próxima</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

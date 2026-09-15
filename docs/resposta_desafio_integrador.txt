@@ -1,0 +1,39 @@
+RESPOSTA — DESAFIO INTEGRADOR
+
+1. Origem dos dados: primeiro isolaria o recorte exato do 
+relatório do ERP (período, filtros, status considerados) e 
+reproduziria a mesma consulta diretamente no banco que alimenta 
+o dashboard, comparando totais por dia/status. Se os totais 
+brutos já divergirem antes de qualquer filtro, o problema é na 
+extração; se só divergirem depois de aplicar os mesmos filtros, 
+o problema é de regra de negócio ou mapeamento de campos 
+(ex.: status ou país tratados de forma diferente nos dois 
+sistemas).
+
+2. Pipeline de ETL: em seguida rastrearia o pipeline ponta a 
+ponta partindo da extração do ERP/arquivos -> normalização -> 
+carga no SQLite procurando arquivos não processados ou processados 
+fora de ordem, falhas silenciosas de registros descartados por 
+engano ou duplicados, erros de conversão de tipo/data, e logs 
+de execução para achar o ponto exato onde a contagem é diferente do ERP.
+
+3. Modelagem do dashboard: validaria se os filtros de 
+lane/vendedor/período e a granularidade temporal (dia vs. mês, 
+fuso horário, data de criação vs. data de validade) são 
+exatamente os mesmos usados no relatório do ERP, e se a 
+agregação (COUNT distinto, exclusão de cancelados, etc.) 
+segue a mesma regra dos dois lados.
+
+4. Comunicação institucional: comunicaria o stakeholder assim 
+que identificasse a causa raiz e o impacto (quantos registros, 
+qual período), com um prazo estimado de correção, e manteria um 
+canal aberto durante a investigação para evitar decisões tomadas 
+sobre números que já sabemos estar incorretos.
+
+5. Prevenção de recorrência: implementaria uma rotina 
+automatizada de reconciliação (comparar contagens agregadas 
+do dashboard com o ERP diariamente) com alerta quando a diferença 
+ultrapassar um limiar, além de testes de regressão no pipeline de 
+ingestão e documentação clara das regras de negócio 
+(definições de status, filtros padrão) compartilhada entre as 
+equipes.

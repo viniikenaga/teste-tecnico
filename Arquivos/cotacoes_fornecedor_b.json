@@ -1,0 +1,846 @@
+{
+  "source": "fornecedor_b",
+  "generated_for": "teste_tecnico_analista_desenvolvimento_sistemas",
+  "shipments": [
+    {
+      "qid": 68472,
+      "cust": "Apple",
+      "cdate": "2022-01-14",
+      "route": {
+        "oport": "PVG",
+        "dport": "GRU",
+        "ocountry": "CHINA",
+        "dcountry": "BRASIL",
+        "lane": "ASIA/AFRICA/OCEANIA"
+      },
+      "cargo": {
+        "mode": "CAI",
+        "ctype": "FCL",
+        "wt": null
+      },
+      "parties": {
+        "op": "John Smith",
+        "carr": "COSCO",
+        "sales": "James Moore",
+        "creator": "Chris Brown"
+      },
+      "status": {
+        "stat": "ESTUDO",
+        "valid": "2022-01-22"
+      },
+      "dept": "DN"
+    },
+    {
+      "qid": 86920,
+      "cust": "Google",
+      "cdate": "2022-01-14",
+      "route": {
+        "oport": "ANR",
+        "dport": "NVT",
+        "ocountry": "BÉLGICA",
+        "dcountry": "BRASIL",
+        "lane": "EUROPA"
+      },
+      "cargo": {
+        "mode": "CMI",
+        "ctype": "FCL",
+        "wt": 1
+      },
+      "parties": {
+        "op": "David Lee",
+        "carr": "COSCO",
+        "sales": "X - Amanda Wilson",
+        "creator": "Amanda Wilson"
+      },
+      "status": {
+        "stat": "APROVADO",
+        "valid": "2022-01-30"
+      },
+      "dept": "EX COLABORADOR"
+    },
+    {
+      "qid": 25104,
+      "cust": "Adidas",
+      "cdate": "2022-01-14",
+      "route": {
+        "oport": "PVG",
+        "dport": "GRU",
+        "ocountry": "CHINA",
+        "dcountry": "BRASIL",
+        "lane": "ASIA/AFRICA/OCEANIA"
+      },
+      "cargo": {
+        "mode": "CAI",
+        "ctype": "FCL",
+        "wt": null
+      },
+      "parties": {
+        "op": "Emily Davis",
+        "carr": "HAPAG-LLOYD",
+        "sales": "Chris Brown",
+        "creator": "Emily Davis"
+      },
+      "status": {
+        "stat": "APROVADO",
+        "valid": "2022-01-22"
+      },
+      "dept": "DN"
+    },
+    {
+      "qid": 63570,
+      "cust": "Amazon",
+      "cdate": "2022-01-14",
+      "route": {
+        "oport": "VCP",
+        "dport": "MDE",
+        "ocountry": "BRASIL",
+        "dcountry": "COLÔMBIA",
+        "lane": "AMERICAS"
+      },
+      "cargo": {
+        "mode": "CAE",
+        "ctype": "FCL",
+        "wt": 493.93
+      },
+      "parties": {
+        "op": "Sarah Taylor",
+        "carr": "HAPAG-LLOYD",
+        "sales": "Michael Johnson",
+        "creator": "Jane Doe"
+      },
+      "status": {
+        "stat": "REJEITADO",
+        "valid": "2022-04-02"
+      },
+      "dept": "CARGAS ESPECIAIS"
+    },
+    {
+      "qid": 19194,
+      "cust": "Pepsi",
+      "cdate": "2022-01-14",
+      "route": {
+        "oport": "BRU",
+        "dport": "VCP",
+        "ocountry": "BÉLGICA",
+        "dcountry": "BRASIL",
+        "lane": "EUROPA"
+      },
+      "cargo": {
+        "mode": "CAI",
+        "ctype": "FCL",
+        "wt": 96
+      },
+      "parties": {
+        "op": "Emily Davis",
+        "carr": "MAERSK",
+        "sales": "James Moore",
+        "creator": "Emily Davis"
+      },
+      "status": {
+        "stat": "APROVADO",
+        "valid": "2022-02-10"
+      },
+      "dept": "KEY ACCOUNT"
+    },
+    {
+      "qid": 99245,
+      "cust": "Google",
+      "cdate": "2022-01-14",
+      "route": {
+        "oport": "BCN",
+        "dport": "SSZ",
+        "ocountry": "ESPANHA",
+        "dcountry": "BRASIL",
+        "lane": "EUROPA"
+      },
+      "cargo": {
+        "mode": "CMI",
+        "ctype": "FCL",
+        "wt": 1
+      },
+      "parties": {
+        "op": "John Smith",
+        "carr": "COSCO",
+        "sales": "Amanda Wilson",
+        "creator": "David Lee"
+      },
+      "status": {
+        "stat": "REJEITADO",
+        "valid": "2022-01-31"
+      },
+      "dept": "DN"
+    },
+    {
+      "qid": 94501,
+      "cust": "Adidas",
+      "cdate": "2022-01-14",
+      "route": {
+        "oport": "CHS",
+        "dport": "SSZ",
+        "ocountry": "ESTADOS UNIDOS",
+        "dcountry": "BRASIL",
+        "lane": "AMERICAS"
+      },
+      "cargo": {
+        "mode": "CMI",
+        "ctype": "LCL",
+        "wt": 1.196
+      },
+      "parties": {
+        "op": "David Lee",
+        "carr": "MAERSK",
+        "sales": "David Lee",
+        "creator": "James Moore"
+      },
+      "status": {
+        "stat": "APROVADO",
+        "valid": "2022-01-31"
+      },
+      "dept": "KEY ACCOUNT"
+    },
+    {
+      "qid": 83738,
+      "cust": "Tesla",
+      "cdate": "2022-01-14",
+      "route": {
+        "oport": "VCP",
+        "dport": "SCL",
+        "ocountry": "BRASIL",
+        "dcountry": "CHILE",
+        "lane": "AMERICAS"
+      },
+      "cargo": {
+        "mode": "CAE",
+        "ctype": "FCL",
+        "wt": 150
+      },
+      "parties": {
+        "op": "James Moore",
+        "carr": "ONE",
+        "sales": "Jane Doe",
+        "creator": "Jane Doe"
+      },
+      "status": {
+        "stat": "SEGUNDA OPCAO",
+        "valid": "2022-01-31"
+      },
+      "dept": "CARGAS ESPECIAIS"
+    },
+    {
+      "qid": 48600,
+      "cust": "Amazon",
+      "cdate": "2022-01-17",
+      "route": {
+        "oport": "MIA",
+        "dport": "GRU",
+        "ocountry": "ESTADOS UNIDOS",
+        "dcountry": "BRASIL",
+        "lane": "AMERICAS"
+      },
+      "cargo": {
+        "mode": "CAI",
+        "ctype": "FCL",
+        "wt": 1
+      },
+      "parties": {
+        "op": "Emily Davis",
+        "carr": "ONE",
+        "sales": "Amanda Wilson",
+        "creator": "Chris Brown"
+      },
+      "status": {
+        "stat": "APROVADO",
+        "valid": "2022-01-31"
+      },
+      "dept": "KEY ACCOUNT"
+    },
+    {
+      "qid": 30426,
+      "cust": "Amazon",
+      "cdate": "2022-01-17",
+      "route": {
+        "oport": "ZRH",
+        "dport": "GRU",
+        "ocountry": "SUÍÇA",
+        "dcountry": "BRASIL",
+        "lane": "EUROPA"
+      },
+      "cargo": {
+        "mode": "CAI",
+        "ctype": "FCL",
+        "wt": 1
+      },
+      "parties": {
+        "op": "Jessica White",
+        "carr": "COSCO",
+        "sales": "Amanda Wilson",
+        "creator": "Michael Johnson"
+      },
+      "status": {
+        "stat": "REJEITADO",
+        "valid": "2022-01-31"
+      },
+      "dept": "CARGAS ESPECIAIS"
+    },
+    {
+      "qid": 48296,
+      "cust": "Nike",
+      "cdate": "2022-01-17",
+      "route": {
+        "oport": "JFK",
+        "dport": "GRU",
+        "ocountry": "ESTADOS UNIDOS",
+        "dcountry": "BRASIL",
+        "lane": "AMERICAS"
+      },
+      "cargo": {
+        "mode": "CAI",
+        "ctype": "FCL",
+        "wt": 17.02
+      },
+      "parties": {
+        "op": "James Moore",
+        "carr": "HAPAG-LLOYD",
+        "sales": "Emily Davis",
+        "creator": "Amanda Wilson"
+      },
+      "status": {
+        "stat": "SEGUNDA OPCAO",
+        "valid": "2022-02-15"
+      },
+      "dept": "KEY ACCOUNT"
+    },
+    {
+      "qid": 38448,
+      "cust": "Samsung",
+      "cdate": "2022-01-17",
+      "route": {
+        "oport": "ZRH",
+        "dport": "GRU",
+        "ocountry": "SUÍÇA",
+        "dcountry": "BRASIL",
+        "lane": "EUROPA"
+      },
+      "cargo": {
+        "mode": "CAI",
+        "ctype": "FCL",
+        "wt": 1
+      },
+      "parties": {
+        "op": "Michael Johnson",
+        "carr": "ONE",
+        "sales": "Jane Doe",
+        "creator": "James Moore"
+      },
+      "status": {
+        "stat": "APROVADO",
+        "valid": "2022-01-31"
+      },
+      "dept": "CARGAS ESPECIAIS"
+    },
+    {
+      "qid": 46023,
+      "cust": "Amazon",
+      "cdate": "2022-01-17",
+      "route": {
+        "oport": "LGP",
+        "dport": "ITJ",
+        "ocountry": "REINO UNIDO",
+        "dcountry": "BRASIL",
+        "lane": "EUROPA"
+      },
+      "cargo": {
+        "mode": "CMI",
+        "ctype": "FCL",
+        "wt": 1
+      },
+      "parties": {
+        "op": "Jessica White",
+        "carr": "CMA-CGM",
+        "sales": "Jane Doe",
+        "creator": "Emily Davis"
+      },
+      "status": {
+        "stat": "SEGUNDA OPCAO",
+        "valid": "2022-02-28"
+      },
+      "dept": "KEY ACCOUNT"
+    },
+    {
+      "qid": 98739,
+      "cust": "Pepsi",
+      "cdate": "2022-01-17",
+      "route": {
+        "oport": "MIA",
+        "dport": "GRU",
+        "ocountry": "ESTADOS UNIDOS",
+        "dcountry": "BRASIL",
+        "lane": "AMERICAS"
+      },
+      "cargo": {
+        "mode": "CAI",
+        "ctype": "FCL",
+        "wt": 2139.58
+      },
+      "parties": {
+        "op": "Jane Doe",
+        "carr": "COSCO",
+        "sales": "Jane Doe",
+        "creator": "Amanda Wilson"
+      },
+      "status": {
+        "stat": "APROVADO",
+        "valid": "2022-02-10"
+      },
+      "dept": "DN"
+    },
+    {
+      "qid": 33352,
+      "cust": "Nike",
+      "cdate": "2022-01-17",
+      "route": {
+        "oport": "MIA",
+        "dport": "BEL",
+        "ocountry": "ESTADOS UNIDOS",
+        "dcountry": "BRASIL",
+        "lane": "AMERICAS"
+      },
+      "cargo": {
+        "mode": "CAI",
+        "ctype": "FCL",
+        "wt": 1
+      },
+      "parties": {
+        "op": "John Smith",
+        "carr": "MAERSK",
+        "sales": "James Moore",
+        "creator": "James Moore"
+      },
+      "status": {
+        "stat": "APROVADO",
+        "valid": "2022-01-20"
+      },
+      "dept": "DN"
+    },
+    {
+      "qid": 65696,
+      "cust": "Amazon",
+      "cdate": "2022-01-17",
+      "route": {
+        "oport": "MIA",
+        "dport": "GRU",
+        "ocountry": "ESTADOS UNIDOS",
+        "dcountry": "BRASIL",
+        "lane": "AMERICAS"
+      },
+      "cargo": {
+        "mode": "CAI",
+        "ctype": "FCL",
+        "wt": 1
+      },
+      "parties": {
+        "op": "James Moore",
+        "carr": "HAPAG-LLOYD",
+        "sales": "Chris Brown",
+        "creator": "Michael Johnson"
+      },
+      "status": {
+        "stat": "REJEITADO",
+        "valid": "2022-01-20"
+      },
+      "dept": "DN"
+    },
+    {
+      "qid": 88435,
+      "cust": "Nike",
+      "cdate": "2022-01-17",
+      "route": {
+        "oport": "GRU",
+        "dport": "HKG",
+        "ocountry": "BRASIL",
+        "dcountry": "HONG KONG",
+        "lane": "ASIA/AFRICA/OCEANIA"
+      },
+      "cargo": {
+        "mode": "CAE",
+        "ctype": "FCL",
+        "wt": 3965.7
+      },
+      "parties": {
+        "op": "John Smith",
+        "carr": "MAERSK",
+        "sales": "Jane Doe",
+        "creator": "Amanda Wilson"
+      },
+      "status": {
+        "stat": "REJEITADO",
+        "valid": "2022-01-24"
+      },
+      "dept": "ADM"
+    },
+    {
+      "qid": 21303,
+      "cust": "Coca-Cola",
+      "cdate": "2022-01-17",
+      "route": {
+        "oport": "PVG",
+        "dport": "GRU",
+        "ocountry": "CHINA",
+        "dcountry": "BRASIL",
+        "lane": "ASIA/AFRICA/OCEANIA"
+      },
+      "cargo": {
+        "mode": "CAI",
+        "ctype": "FCL",
+        "wt": null
+      },
+      "parties": {
+        "op": "Jane Doe",
+        "carr": "CMA-CGM",
+        "sales": "Sarah Taylor",
+        "creator": "David Lee"
+      },
+      "status": {
+        "stat": "APROVADO",
+        "valid": "2022-01-26"
+      },
+      "dept": "DN"
+    },
+    {
+      "qid": 11058,
+      "cust": "Adidas",
+      "cdate": "2022-01-17",
+      "route": {
+        "oport": "SEA",
+        "dport": "GRU",
+        "ocountry": "ESTADOS UNIDOS",
+        "dcountry": "BRASIL",
+        "lane": "AMERICAS"
+      },
+      "cargo": {
+        "mode": "CAI",
+        "ctype": "FCL",
+        "wt": 6486
+      },
+      "parties": {
+        "op": "Michael Johnson",
+        "carr": "MAERSK",
+        "sales": "David Lee",
+        "creator": "Emily Davis"
+      },
+      "status": {
+        "stat": "SEGUNDA OPCAO",
+        "valid": "2022-01-31"
+      },
+      "dept": "DN"
+    },
+    {
+      "qid": 57336,
+      "cust": "Adidas",
+      "cdate": "2022-01-17",
+      "route": {
+        "oport": "MIA",
+        "dport": "GRU",
+        "ocountry": "ESTADOS UNIDOS",
+        "dcountry": "BRASIL",
+        "lane": "AMERICAS"
+      },
+      "cargo": {
+        "mode": "CAI",
+        "ctype": "FCL",
+        "wt": 1
+      },
+      "parties": {
+        "op": "David Lee",
+        "carr": "HAPAG-LLOYD",
+        "sales": "Chris Brown",
+        "creator": "Jane Doe"
+      },
+      "status": {
+        "stat": "SEGUNDA OPCAO",
+        "valid": "2022-01-20"
+      },
+      "dept": "DN"
+    },
+    {
+      "qid": 80414,
+      "cust": "Samsung",
+      "cdate": "2022-01-17",
+      "route": {
+        "oport": "MIA",
+        "dport": "BEL",
+        "ocountry": "ESTADOS UNIDOS",
+        "dcountry": "BRASIL",
+        "lane": "AMERICAS"
+      },
+      "cargo": {
+        "mode": "CAI",
+        "ctype": "FCL",
+        "wt": 1
+      },
+      "parties": {
+        "op": "James Moore",
+        "carr": "CMA-CGM",
+        "sales": "Michael Johnson",
+        "creator": "Jessica White"
+      },
+      "status": {
+        "stat": "APROVADO",
+        "valid": "2022-01-22"
+      },
+      "dept": "DN"
+    },
+    {
+      "qid": 13898,
+      "cust": "Microsoft",
+      "cdate": "2022-01-17",
+      "route": {
+        "oport": "SSZ",
+        "dport": "TOR",
+        "ocountry": "BRASIL",
+        "dcountry": "CANADÁ",
+        "lane": "AMERICAS"
+      },
+      "cargo": {
+        "mode": "CME",
+        "ctype": "FCL",
+        "wt": 1
+      },
+      "parties": {
+        "op": "Michael Johnson",
+        "carr": "COSCO",
+        "sales": "Jessica White",
+        "creator": "Jane Doe"
+      },
+      "status": {
+        "stat": "REJEITADO",
+        "valid": "2022-01-17"
+      },
+      "dept": "ADM"
+    },
+    {
+      "qid": 50545,
+      "cust": "Coca-Cola",
+      "cdate": "2022-01-17",
+      "route": {
+        "oport": "MIA",
+        "dport": "GRU",
+        "ocountry": "ESTADOS UNIDOS",
+        "dcountry": "BRASIL",
+        "lane": "AMERICAS"
+      },
+      "cargo": {
+        "mode": "CAI",
+        "ctype": "FCL",
+        "wt": 399
+      },
+      "parties": {
+        "op": "Emily Davis",
+        "carr": "COSCO",
+        "sales": "Jane Doe",
+        "creator": "Sarah Taylor"
+      },
+      "status": {
+        "stat": "REJEITADO",
+        "valid": "2022-01-31"
+      },
+      "dept": "KEY ACCOUNT"
+    },
+    {
+      "qid": 89986,
+      "cust": "Nike",
+      "cdate": "2022-01-17",
+      "route": {
+        "oport": "SZX",
+        "dport": "ITJ",
+        "ocountry": "CHINA",
+        "dcountry": "BRASIL",
+        "lane": "ASIA/AFRICA/OCEANIA"
+      },
+      "cargo": {
+        "mode": "CMI",
+        "ctype": "FCL",
+        "wt": 1
+      },
+      "parties": {
+        "op": "Amanda Wilson",
+        "carr": "ONE",
+        "sales": "X - Sarah Taylor",
+        "creator": "Jane Doe"
+      },
+      "status": {
+        "stat": "ESTUDO",
+        "valid": "2022-02-14"
+      },
+      "dept": "EX COLABORADOR"
+    },
+    {
+      "qid": 19512,
+      "cust": "Adidas",
+      "cdate": "2022-01-17",
+      "route": {
+        "oport": "SSZ",
+        "dport": "NYC",
+        "ocountry": "BRASIL",
+        "dcountry": "ESTADOS UNIDOS",
+        "lane": "AMERICAS"
+      },
+      "cargo": {
+        "mode": "CME",
+        "ctype": "FCL",
+        "wt": 1
+      },
+      "parties": {
+        "op": "Jessica White",
+        "carr": "ONE",
+        "sales": "Amanda Wilson",
+        "creator": "Jessica White"
+      },
+      "status": {
+        "stat": "REJEITADO",
+        "valid": "2022-02-28"
+      },
+      "dept": "KEY ACCOUNT"
+    },
+    {
+      "qid": 14215,
+      "cust": "Pepsi",
+      "cdate": "2022-01-17",
+      "route": {
+        "oport": "MIA",
+        "dport": "GRU",
+        "ocountry": "ESTADOS UNIDOS",
+        "dcountry": "BRASIL",
+        "lane": "AMERICAS"
+      },
+      "cargo": {
+        "mode": "CAI",
+        "ctype": "FCL",
+        "wt": 34
+      },
+      "parties": {
+        "op": "Sarah Taylor",
+        "carr": "ONE",
+        "sales": "Sarah Taylor",
+        "creator": "Jessica White"
+      },
+      "status": {
+        "stat": "ESTUDO",
+        "valid": "2022-01-22"
+      },
+      "dept": "DN"
+    },
+    {
+      "qid": 71136,
+      "cust": "Microsoft",
+      "cdate": "2022-01-17",
+      "route": {
+        "oport": "CPT",
+        "dport": "RIG",
+        "ocountry": "ÁFRICA DO SUL",
+        "dcountry": "BRASIL",
+        "lane": "ASIA/AFRICA/OCEANIA"
+      },
+      "cargo": {
+        "mode": "CMI",
+        "ctype": "FCL",
+        "wt": 1
+      },
+      "parties": {
+        "op": "John Smith",
+        "carr": "MAERSK",
+        "sales": "David Lee",
+        "creator": "Emily Davis"
+      },
+      "status": {
+        "stat": "REJEITADO",
+        "valid": "2022-01-31"
+      },
+      "dept": "DN"
+    },
+    {
+      "qid": 12694,
+      "cust": "Microsoft",
+      "cdate": "2022-01-17",
+      "route": {
+        "oport": "SHA",
+        "dport": "NVT",
+        "ocountry": "CHINA",
+        "dcountry": "BRASIL",
+        "lane": "ASIA/AFRICA/OCEANIA"
+      },
+      "cargo": {
+        "mode": "CMI",
+        "ctype": "FCL",
+        "wt": 1
+      },
+      "parties": {
+        "op": "Chris Brown",
+        "carr": "MAERSK",
+        "sales": "X - Michael Johnson",
+        "creator": "Michael Johnson"
+      },
+      "status": {
+        "stat": "APROVADO",
+        "valid": "2022-02-14"
+      },
+      "dept": "EX COLABORADOR"
+    },
+    {
+      "qid": 64713,
+      "cust": "Adidas",
+      "cdate": "2022-01-17",
+      "route": {
+        "oport": "ZRH",
+        "dport": "GRU",
+        "ocountry": "SUÍÇA",
+        "dcountry": "BRASIL",
+        "lane": "EUROPA"
+      },
+      "cargo": {
+        "mode": "CAI",
+        "ctype": "FCL",
+        "wt": 43
+      },
+      "parties": {
+        "op": "John Smith",
+        "carr": "ONE",
+        "sales": "X - David Lee",
+        "creator": "Chris Brown"
+      },
+      "status": {
+        "stat": "APROVADO",
+        "valid": "2022-01-21"
+      },
+      "dept": "EX COLABORADOR"
+    },
+    {
+      "qid": 13427,
+      "cust": "Amazon",
+      "cdate": "2022-01-17",
+      "route": {
+        "oport": "MIA",
+        "dport": "GRU",
+        "ocountry": "ESTADOS UNIDOS",
+        "dcountry": "BRASIL",
+        "lane": "AMERICAS"
+      },
+      "cargo": {
+        "mode": "CAI",
+        "ctype": "FCL",
+        "wt": 1
+      },
+      "parties": {
+        "op": "David Lee",
+        "carr": "MAERSK",
+        "sales": "Chris Brown",
+        "creator": "Jessica White"
+      },
+      "status": {
+        "stat": "APROVADO",
+        "valid": "2022-01-31"
+      },
+      "dept": "KEY ACCOUNT"
+    }
+  ]
+}
