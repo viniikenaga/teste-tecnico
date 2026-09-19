@@ -183,8 +183,8 @@ def api_forecast():
 @app.route("/api/filtros")
 def api_filtros():
     db = get_db()
-    lanes = [r["lane"] for r in db.execute("SELECT DISTINCT lane FROM cotacoes ORDER BY lane")]
-    vendedores = [r["vendedor"] for r in db.execute("SELECT DISTINCT vendedor FROM cotacoes ORDER BY vendedor")]
+    lanes = [r["lane"] for r in db.execute("SELECT DISTINCT lane FROM cotacoes WHERE lane IS NOT NULL AND TRIM(lane) <> '' ORDER BY lane")]
+    vendedores = [r["vendedor"] for r in db.execute("SELECT DISTINCT vendedor FROM cotacoes WHERE vendedor IS NOT NULL AND TRIM(vendedor) <> '' ORDER BY vendedor")]
     return jsonify({"lanes": lanes, "vendedores": vendedores})
 
 
@@ -232,10 +232,10 @@ def api_summary():
 
     lane_distribution = db.execute(
         f"""
-        SELECT lane, COUNT(*) AS quantidade
+        SELECT COALESCE(NULLIF(TRIM(lane), ''), 'Sem lane') AS lane, COUNT(*) AS quantidade
         FROM cotacoes
         {where_sql}
-        GROUP BY lane
+        GROUP BY 1
         ORDER BY quantidade DESC
         """,
         params,
@@ -255,8 +255,11 @@ def api_cotacoes():
     db = get_db()
     where_sql, params = build_filters(request.args)
 
-    page = max(int(request.args.get("page", 1)), 1)
-    per_page = min(max(int(request.args.get("per_page", 15)), 1), 100)
+    try:
+        page = max(int(request.args.get("page", 1)), 1)
+        per_page = min(max(int(request.args.get("per_page", 15)), 1), 100)
+    except ValueError:
+        return jsonify({"erro": "Parâmetros 'page' e 'per_page' devem ser inteiros."}), 400
     offset = (page - 1) * per_page
 
     total = db.execute(f"SELECT COUNT(*) AS n FROM cotacoes {where_sql}", params).fetchone()["n"]

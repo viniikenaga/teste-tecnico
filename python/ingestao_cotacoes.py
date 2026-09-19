@@ -167,16 +167,35 @@ def normalize_json_shipment(shipment: dict[str, Any]) -> dict[str, Any]:
 
 
 def read_csv_file(path: Path) -> list[dict[str, Any]]:
+    """Lê e normaliza o CSV, pulando linhas individualmente inválidas (não descarta o arquivo todo)."""
+    records = []
     with path.open(newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f)
-        return [normalize_csv_row(row) for row in reader]
+        for line_num, row in enumerate(reader, start=2):  # linha 1 é o cabeçalho
+            try:
+                records.append(normalize_csv_row(row))
+            except (ValueError, TypeError) as exc:
+                logger.warning(
+                    "Linha %d de %s ignorada (dado inválido): %s", line_num, path.name, exc
+                )
+    return records
 
 
 def read_json_file(path: Path) -> list[dict[str, Any]]:
+    """Lê e normaliza o JSON, pulando registros individualmente inválidos (não descarta o arquivo todo)."""
     with path.open(encoding="utf-8") as f:
         data = json.load(f)
     shipments = data.get("shipments", [])
-    return [normalize_json_shipment(s) for s in shipments]
+
+    records = []
+    for index, shipment in enumerate(shipments, start=1):
+        try:
+            records.append(normalize_json_shipment(shipment))
+        except (ValueError, TypeError) as exc:
+            logger.warning(
+                "Registro %d de %s ignorado (dado inválido): %s", index, path.name, exc
+            )
+    return records
 
 
 def get_existing_codes(conn: sqlite3.Connection) -> set[int]:
@@ -230,8 +249,8 @@ def process_file(conn: sqlite3.Connection, path: Path) -> tuple[int, int]:
         else:
             logger.warning("Extensão não suportada, ignorando arquivo: %s", path.name)
             return 0, 0
-    except (OSError, ValueError, json.JSONDecodeError, csv.Error) as exc:
-        logger.error("Falha ao ler/normalizar arquivo %s: %s", path.name, exc)
+    except (OSError, json.JSONDecodeError, csv.Error) as exc:
+        logger.error("Falha ao ler arquivo %s: %s", path.name, exc)
         return 0, 0
 
     inserted, skipped = insert_records(conn, records)

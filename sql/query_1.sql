@@ -1,6 +1,9 @@
 -- Tarefa 1.1 — Rank de Vendedores
 -- Ranking de vendedores ativos por quantidade de cotações aprovadas,
 -- no período de 01/01/2022 a 31/07/2022, excluindo destino = BRASIL.
+-- Convenção do dataset: vendedores com nome prefixado por "X -" são
+-- ex-funcionários (não há coluna de status de vendedor); ver também
+-- query_3.sql, que usa a mesma convenção para reclassificá-los.
 SELECT
     v.nome                                          AS vendedor,
     COUNT(c.codigo)                                 AS qtd_cotacoes_aprovadas,

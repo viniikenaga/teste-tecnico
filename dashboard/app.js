@@ -258,12 +258,49 @@
     });
   }
 
+  // ---- KPIs derivados do próprio /api/summary (sem chamada extra) ----
+  function renderKpis(data) {
+    document.getElementById("stat-total").textContent = data.total_cotacoes.toLocaleString("pt-BR");
+
+    const aprovadas = data.status_distribution.find((r) => r.status === "APROVADO");
+    const totalStatus = data.status_distribution.reduce((acc, r) => acc + r.quantidade, 0);
+    const taxaAprovacaoEl = document.getElementById("stat-taxa-aprovacao");
+    const taxaAprovacaoCaptionEl = document.getElementById("stat-taxa-aprovacao-caption");
+    if (totalStatus > 0 && aprovadas) {
+      const pct = (100 * aprovadas.quantidade) / totalStatus;
+      taxaAprovacaoEl.textContent = `${pct.toFixed(1)}%`;
+      taxaAprovacaoCaptionEl.textContent = `${aprovadas.quantidade.toLocaleString("pt-BR")} de ${totalStatus.toLocaleString("pt-BR")} cotações`;
+    } else {
+      taxaAprovacaoEl.textContent = "—";
+      taxaAprovacaoCaptionEl.textContent = "";
+    }
+
+    document.getElementById("stat-lanes-ativas").textContent = data.lane_distribution.length.toLocaleString("pt-BR");
+
+    const vendedorEl = document.getElementById("stat-vendedor-destaque");
+    const vendedorCaptionEl = document.getElementById("stat-vendedor-destaque-caption");
+    if (data.top_vendedores.length > 0) {
+      const lider = data.top_vendedores[0];
+      vendedorEl.textContent = lider.vendedor;
+      vendedorCaptionEl.textContent = `${lider.aprovadas.toLocaleString("pt-BR")} cotações aprovadas`;
+    } else {
+      vendedorEl.textContent = "—";
+      vendedorCaptionEl.textContent = "";
+    }
+  }
+
+  function updateLastUpdated() {
+    const now = new Date();
+    document.getElementById("last-updated").textContent =
+      `Atualizado às ${now.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" })}`;
+  }
+
   async function loadSummary() {
     const params = { ...currentFilters(), status_toggle: state.statusToggle };
     const query = buildQuery(params);
     const data = await fetchJSON(`/api/summary?${query}`);
 
-    document.getElementById("stat-total").textContent = data.total_cotacoes.toLocaleString("pt-BR");
+    renderKpis(data);
     renderTopVendedores(data.top_vendedores);
     renderVolumeMensal(data.volume_mensal);
     renderStatusDistribution(data.status_distribution);
@@ -386,7 +423,17 @@
 
   async function refreshAll() {
     state.page = 1;
-    await Promise.all([loadSummary(), loadForecast(), loadCotacoes()]);
+    const btnAplicar = document.getElementById("btn-aplicar");
+    const originalLabel = btnAplicar.textContent;
+    btnAplicar.disabled = true;
+    btnAplicar.textContent = "Aplicando…";
+    try {
+      await Promise.all([loadSummary(), loadForecast(), loadCotacoes()]);
+      updateLastUpdated();
+    } finally {
+      btnAplicar.disabled = false;
+      btnAplicar.textContent = originalLabel;
+    }
   }
 
   function populateSelect(select, values) {

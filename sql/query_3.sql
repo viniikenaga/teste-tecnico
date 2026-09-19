@@ -1,4 +1,7 @@
 -- Tarefa 1.3 — View de Normalização
+-- Convenção do dataset: vendedores com nome prefixado por "X -" são
+-- ex-funcionários (não há coluna de status de vendedor); mesma convenção
+-- usada para excluí-los em query_1.sql.
 DROP VIEW IF EXISTS vw_cotacoes_normalizadas;
 
 CREATE VIEW vw_cotacoes_normalizadas AS

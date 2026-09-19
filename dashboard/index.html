@@ -8,8 +8,22 @@
 </head>
 <body>
   <header class="app-header">
-    <h1>Dashboard de Cotações Logísticas</h1>
-    <p class="app-subtitle">Cotações internacionais consolidadas — visão de vendedores, status e lanes</p>
+    <div class="app-header-brand">
+      <span class="app-logo" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 3v18h18" />
+          <path d="M7 15l4-5 3 3 5-7" />
+        </svg>
+      </span>
+      <div>
+        <h1>Dashboard de Cotações Logísticas</h1>
+        <p class="app-subtitle">Cotações internacionais consolidadas — visão de vendedores, status e lanes</p>
+      </div>
+    </div>
+    <div class="app-header-meta">
+      <span class="live-dot" aria-hidden="true"></span>
+      <span id="last-updated">Carregando dados…</span>
+    </div>
   </header>
 
   <main class="app-main">
@@ -47,8 +61,41 @@
             <path d="M9 17V9m6 8V5M3 21h18M6 21V13" />
           </svg>
         </span>
-        <span class="stat-label">Total de cotações registradas</span>
+        <span class="stat-label">Total de cotações</span>
         <span class="stat-value" id="stat-total">—</span>
+      </div>
+
+      <div class="stat-tile">
+        <span class="stat-tile-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 6L9 17l-5-5" />
+          </svg>
+        </span>
+        <span class="stat-label">Taxa de aprovação</span>
+        <span class="stat-value" id="stat-taxa-aprovacao">—</span>
+        <span class="stat-caption" id="stat-taxa-aprovacao-caption"></span>
+      </div>
+
+      <div class="stat-tile">
+        <span class="stat-tile-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 12h18M3 6h18M3 18h18" />
+          </svg>
+        </span>
+        <span class="stat-label">Lanes ativas</span>
+        <span class="stat-value" id="stat-lanes-ativas">—</span>
+      </div>
+
+      <div class="stat-tile">
+        <span class="stat-tile-icon" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="4" />
+            <path d="M4 21c0-4 4-6 8-6s8 2 8 6" />
+          </svg>
+        </span>
+        <span class="stat-label">Vendedor destaque</span>
+        <span class="stat-value stat-value--text" id="stat-vendedor-destaque">—</span>
+        <span class="stat-caption" id="stat-vendedor-destaque-caption"></span>
       </div>
     </section>
 
